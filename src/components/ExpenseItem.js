@@ -1,13 +1,14 @@
 import  "./ExpenseItem.css";
 
-function ExpenseItem() {
+function ExpenseItem(props) {
+    
     return (
         <div className="expense-item">
-            <div>August 5th 2023</div>
+            <div>{props.date.toLocaleString("pl-PL", {weekday: "short", day:"numeric", month:"long", year:"numeric"})}</div>
             <div className="expense-item__description">
-                <h2>Car Insurance</h2>
+                <h2>{props.title}</h2>
                 <div className="expense-item__price">
-                    PLN 1200,90
+                    PLN {props.amount}
                 </div>
                 
             </div>
