@@ -17,8 +17,21 @@ const ExpenseForm = () => {
         setEnteredDate(event.target.value)
     }
 
+    const submitHandler = (event) => {
+        // disable default browser behavior, in this case reload page after clik on button submit
+        event.preventDefault();
+
+        // create an object to sotre handled data from form
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        }
+        console.log(expenseData);
+    }
+
     return(
-        <form>
+        <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Tytuł</label>
