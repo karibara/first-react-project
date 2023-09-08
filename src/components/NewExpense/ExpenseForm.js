@@ -24,7 +24,7 @@ const ExpenseForm = (props) => {
     // create an object to sotre handled data from form
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
@@ -80,7 +80,9 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button onClick={buttonClickedHandler}>Anuluj</button>
+        <button type="button" onClick={buttonClickedHandler}>
+          Anuluj
+        </button>
         <button type="submit">Dodaj Wydatek</button>
       </div>
     </form>

@@ -16,8 +16,10 @@ const NewExpense = (props) => {
     props.onAddExpense(expenseData);
   };
 
+  // set boolean to event onClick on button - non clicked button
   const [isClicked, setIsClicked] = useState(false);
 
+  // change state of button to use it as a conditional
   const showFormHandler = () => {
     setIsClicked(true);
   };
