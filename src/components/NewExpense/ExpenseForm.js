@@ -35,6 +35,14 @@ const ExpenseForm = (props) => {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+
+    // hide form when button submit is clicked (and submit form)
+    props.onCancelClicked(buttonClickedHandler);
+  };
+
+  // hide form when button cancel is clicked
+  const buttonClickedHandler = () => {
+    props.onCancelClicked(buttonClickedHandler);
   };
 
   return (
@@ -72,6 +80,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={buttonClickedHandler}>Anuluj</button>
         <button type="submit">Dodaj Wydatek</button>
       </div>
     </form>
